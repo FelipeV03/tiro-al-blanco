@@ -62,7 +62,8 @@ function disparo(e) {
             text: "Na de locos ganaste :D",
             icon: "success",
             showConfirmButton: false,
-            timer: 3000
+            timer: 3000,
+            position: "top-end"
         })
     } else {
         // alert('Perdiste sos re manco :P');
@@ -71,7 +72,8 @@ function disparo(e) {
             text: "Na perdise muy manco ome :P",
             icon: "error",
             showConfirmButton: false,
-            timer: 3000
+            timer: 3000,
+            position: "top-end"
         })
     }
 }
