@@ -57,24 +57,39 @@ function disparo(e) {
 
     if (x < xRandom + radio && x > xRandom - radio && y < yRandom + radio && y > yRandom - radio) {
         // alert('Bien hecho sos un crack! :D');
-        Swal.fire({
-            title: "¡Bien hecho!",
-            text: "Na de locos ganaste :D",
-            icon: "success",
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
             showConfirmButton: false,
-            timer: 3000,
-            position: "top-end"
-        })
+            timer: 1000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "Bien hecho sos un crack! :D"
+        });
     } else {
         // alert('Perdiste sos re manco :P');
-        Swal.fire({
-            title:"Manco",
-            text: "Na perdise muy manco ome :P",
-            icon: "error",
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
             showConfirmButton: false,
-            timer: 3000,
-            position: "top-end"
-        })
+            timer: 1000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "error",
+            title: "Perdiste sos re manco :P"
+        });
     }
 }
 
